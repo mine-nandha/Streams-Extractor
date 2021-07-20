@@ -11,7 +11,7 @@ from config import Config
 from script import Script
 
 
-@trojanz.on_message(filters.command(["start"]) & filters.private)
+@minenandha.on_message(filters.command(["start"]) & filters.private)
 async def start(client, message):
     await message.reply_text(
         text=Script.START_MSG.format(message.from_user.mention),
@@ -21,10 +21,6 @@ async def start(client, message):
                 [
                     InlineKeyboardButton("HELP", callback_data="help_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "⭕️ JOIN OUR CHANNEL ⭕️", url="https://t.me/TroJanzHEX")
                 ]
             ]
         ),
@@ -32,7 +28,7 @@ async def start(client, message):
     )
 
 
-@trojanz.on_message(filters.command(["help"]) & filters.private)
+@minenandha.on_message(filters.command(["help"]) & filters.private)
 async def help(client, message):
     await message.reply_text(
         text=Script.HELP_MSG,
@@ -42,10 +38,6 @@ async def help(client, message):
                 [
                     InlineKeyboardButton("BACK", callback_data="start_data"),
                     InlineKeyboardButton("ABOUT", callback_data="about_data"),
-                ],
-                [
-                    InlineKeyboardButton(
-                        "⭕️ SUPPORT ⭕️", url="https://t.me/TroJanzSupport")
                 ]
             ]
         ),
@@ -66,7 +58,7 @@ async def about(client, message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "SOURCE CODE", url="https://github.com/TroJanzHEX/Streams-Extractor")
+                        "SOURCE CODE", url="https://github.com/mine-nandha/Streams-Extractor")
                 ]
             ]
         ),
