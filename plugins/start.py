@@ -4,7 +4,7 @@
 
 
 from pyrogram import filters
-from pyrogram import Client as trojanz
+from pyrogram import Client as minenandha
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import Config
@@ -45,7 +45,7 @@ async def help(client, message):
     )
 
 
-@trojanz.on_message(filters.command(["about"]) & filters.private)
+@minenandha.on_message(filters.command(["about"]) & filters.private)
 async def about(client, message):
     await message.reply_text(
         text=Script.ABOUT_MSG,
